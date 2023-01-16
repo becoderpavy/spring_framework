@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="ad" class="com.becoder.autowire.xml.Address">
+		<property name="city" value="pune" />
+		<property name="state" value="maharastra" />
+	</bean>
+	<bean name="ad2" class="com.becoder.autowire.xml.Address" primary="true">
+		<property name="city" value="pune 2" />
+		<property name="state" value="maharastra 2" />
+	</bean>
+	
+	<bean name="ad3" class="com.becoder.autowire.xml.Address">
+		<property name="city" value="pune 3" />
+		<property name="state" value="maharastra 3" />
+	</bean>
+	
+	<bean name="ad4" class="com.becoder.autowire.xml.Address" >
+		<property name="city" value="pune 4" />
+		<property name="state" value="maharastra 4" />
+	</bean>
+
+	<!-- <bean name="ad2" class="com.becoder.autowire.xml.Address" >
+		<property name="city" value="pune 2" />
+		<property name="state" value="maharastra 2" />
+	</bean> -->
+	
+	
+	
+	<!-- <bean name="address1" class="com.becoder.autowire.xml.Address"> <property 
+		name="city" value="BBSR" /> <property name="state" value="Odisha" /> </bean> -->
+
+	<!-- <bean name="st" class="com.becoder.autowire.xml.Student" autowire="byName"></bean> -->
+
+	<!-- <bean name="st" class="com.becoder.autowire.xml.Student" autowire="byType"></bean> -->
+
+
+
+	<bean name="st" class="com.becoder.autowire.xml.Student"
+		autowire="byType"></bean>
+
+</beans>
