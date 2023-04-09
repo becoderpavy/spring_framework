@@ -44,7 +44,6 @@ public class StudentDaoImpl implements StudentDao {
 	public void deleteStudent(int id) {
 		Student st = hibernateTemplate.get(Student.class, id);
 		hibernateTemplate.delete(st);
-
 	}
 
 }

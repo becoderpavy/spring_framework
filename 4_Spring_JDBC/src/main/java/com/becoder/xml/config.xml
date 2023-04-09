@@ -33,7 +33,6 @@
 
 	<bean name="stDao" class="com.becoder.dao.StudentDaoImpl">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
-
 	</bean>
 
 

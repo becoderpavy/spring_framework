@@ -6,9 +6,11 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+/* @RequestMapping("/site") */
 public class HomeController {
 
 	@RequestMapping("/home")
@@ -24,22 +26,26 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping("/login")
+	@RequestMapping(path="/login")
 	public ModelAndView loginPage() {
 		ModelAndView model = new ModelAndView();
 
 		model.addObject("className", "12th class");
-		model.addObject("regnumber",345242);
-		
+		model.addObject("regnumber", 345242);
+
 		List<String> list = new ArrayList<String>();
 		list.add("Becoder");
 		list.add("Pavy");
 		list.add("Jageswar");
 		model.addObject("nameList", list);
-		
-		
+
 		model.setViewName("login");
 		return model;
 	}
+
+	/*
+	 * @RequestMapping(name = "/register", method = RequestMethod.POST) public
+	 * String register() { return ""; }
+	 */
 
 }
