@@ -32,7 +32,7 @@ public class Homcontroller {
 	@RequestMapping("/home")
 	public String home() {
 
-		//Integer.parseInt("Becoder");
+		// Integer.parseInt("Becoder");
 		String name = null;
 		name.toUpperCase();
 		return "home";
@@ -45,7 +45,7 @@ public class Homcontroller {
 	 * @ExceptionHandler(NullPointerException.class) public String nullExcption() {
 	 * return "error"; }
 	 */
-	
+
 	/*
 	 * @ExceptionHandler(Exception.class) public String allExcption() { return
 	 * "error"; }
@@ -100,9 +100,7 @@ public class Homcontroller {
 				+ File.separator + "img" + File.separator + file.getOriginalFilename();
 
 		System.out.println(path);
-
 		try {
-
 			FileOutputStream fos = new FileOutputStream(path);
 			fos.write(bytes);
 			fos.close();
@@ -111,7 +109,6 @@ public class Homcontroller {
 			e.printStackTrace();
 		}
 		m.addAttribute("imgname", file.getOriginalFilename());
-
 		return "file_success";
 
 	}
