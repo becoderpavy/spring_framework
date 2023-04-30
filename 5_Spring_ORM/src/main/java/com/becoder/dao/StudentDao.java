@@ -16,4 +16,5 @@ public interface StudentDao {
 
 	public void deleteStudent(int id);
 
+	public Student getStudentBy(String em, int id);
 }

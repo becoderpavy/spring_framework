@@ -40,12 +40,14 @@ public class App {
 		 * dao.updateStudent(st); System.out.println("Update Sucessfully");
 		 */
 
-		dao.deleteStudent(2);
+		/*
+		 * dao.deleteStudent(2);
+		 * 
+		 * List<Student> list = dao.getAllStudent(); for (Student sts : list) {
+		 * System.out.println(sts); }
+		 */
 
-		List<Student> list = dao.getAllStudent();
-		for (Student sts : list) {
-			System.out.println(sts);
-		}
-
+		Student sts = dao.getStudentBy("Pavy", 2);
+		System.out.println(sts);
 	}
 }

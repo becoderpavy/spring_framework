@@ -2,6 +2,7 @@ package com.becoder.dao;
 
 import java.util.List;
 
+import org.hibernate.query.Query;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,6 +45,21 @@ public class StudentDaoImpl implements StudentDao {
 	public void deleteStudent(int id) {
 		Student st = hibernateTemplate.get(Student.class, id);
 		hibernateTemplate.delete(st);
+	}
+
+	public Student getStudentBy(String em, int id) {
+		String sql = "from Student  where name=:name and id=:id";
+		// Student st = (Student) hibernateTemplate.find(sql, em, id);
+
+		Student st = (Student) hibernateTemplate.execute(s -> {
+			Query q = s.createQuery(sql);
+
+			q.setString("name", em);
+			q.setInteger("id", id);
+			return q.uniqueResult();
+		});
+
+		return st;
 	}
 
 }

@@ -2,6 +2,7 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -11,6 +12,7 @@
          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+          http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
         ">
 
 
@@ -56,6 +58,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.becoder.entity.Emp</value>
+				<value>com.becoder.entity.User</value>
 			</list>
 		</property>
 	</bean>
@@ -69,6 +72,14 @@
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="factory" />
 	</bean>
+
+	<mvc:annotation-driven />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/myProfile" />
+			<bean class="com.becoder.intecpetor.AuthInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 
 </beans>

@@ -27,8 +27,6 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="home">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="addEmp">Add
-							Emp</a></li>
 
 					<li class="nav-item"><a class="nav-link" href="register">Register
 					</a></li>
@@ -41,49 +39,32 @@
 		</div>
 	</nav>
 
-	<div class="container">
+	<div class="conatiner p-3">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-header text-center">
-						<h4>All Emp Details</h4>
+						<h3>Login Page</h3>
 						<c:if test="${not empty msg }">
 							<h5 class="text-success">${msg }</h5>
 							<c:remove var="msg" />
 						</c:if>
 					</div>
 					<div class="card-body">
-						<table class="table">
-							<thead>
+						<form action="userlogin" method="post">
 
-								<tr>
-									<th scope="col">Id</th>
-									<th scope="col">Full Name</th>
-									<th scope="col">Address</th>
-									<th scope="col">Email</th>
-									<th scope="col">Password</th>
-									<th scope="col">Designation</th>
-									<th scope="col">Salary</th>
-									<th scope="col">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${empList }" var="emp">
-									<tr>
-										<th scope="row">${emp.id }</th>
-										<td>${emp.fullName }</td>
-										<td>${emp.address }</td>
-										<td>${emp.email }</td>
-										<td>${emp.password }</td>
-										<td>${emp.designation}</td>
-										<td>${emp.salary }</td>
-										<td><a href="editEmp/${emp.id}"
-											class="btn btn-sm btn-primary">Edit</a> <a
-											href="deleteEmp/${emp.id }" class="btn btn-sm btn-danger">Delete</a></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
+							<div class="mb-3">
+								<label>Enter Email</label> <input type="text" name="email"
+									class="form-control">
+							</div>
+
+							<div class="mb-3">
+								<label>Enter Password</label> <input type="text" name="password"
+									class="form-control">
+							</div>
+
+							<button class="btn btn-primary col-md-12">Login</button>
+						</form>
 					</div>
 				</div>
 			</div>
