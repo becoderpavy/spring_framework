@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Spring_MVC" path="/Spring_MVC" reloadable="true" source="org.eclipse.jst.j2ee.server:Spring_MVC"/><Context docBase="6_Spring_MVC_Form" path="/6_Spring_MVC_Form" reloadable="true" source="org.eclipse.jst.j2ee.server:6_Spring_MVC_Form"/><Context docBase="7_Register_Form_JDBC" path="/7_Register_Form_JDBC" reloadable="true" source="org.eclipse.jst.j2ee.server:7_Register_Form_JDBC"/><Context docBase="8_SpringMVC_ORM" path="/8_SpringMVC_ORM" reloadable="true" source="org.eclipse.jst.j2ee.server:8_SpringMVC_ORM"/><Context docBase="9_Spring_Inteceptor" path="/9_Spring_Inteceptor" reloadable="true" source="org.eclipse.jst.j2ee.server:9_Spring_Inteceptor"/><Context docBase="10_Emp_Crud_Project" path="/10_Emp_Crud_Project" reloadable="true" source="org.eclipse.jst.j2ee.server:10_Emp_Crud_Project"/></Host>
+      <Context docBase="Enotes_Tracker" path="/Enotes_Tracker" reloadable="true" source="org.eclipse.jst.j2ee.server:Enotes_Tracker"/></Host>
     </Engine>
   </Service>
 </Server>
